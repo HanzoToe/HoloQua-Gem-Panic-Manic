@@ -39,7 +39,7 @@ public class Player_Movement : MonoBehaviour
         if (Input.GetButtonDown("Fire3") && CanSlide && SlideCooldown <= 0f)
         {
             StartCoroutine("Slide");
-            SlideCooldown = 2f; 
+            SlideCooldown = 1f; 
         }
     }
 
