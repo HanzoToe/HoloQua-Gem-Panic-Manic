@@ -11,12 +11,14 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private float SlideCooldown = 0f; 
     
     [Header("Components")]
-    [SerializeField] private Rigidbody2D rb; 
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private SpriteRenderer SR; 
     
     
     Vector2 direction;
     bool CanSlide = true;
-    bool IsSliding = false; 
+    bool IsSliding = false;
+    bool FacingRight = true; 
 
 
 
@@ -24,6 +26,7 @@ public class Player_Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        SR = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -40,6 +43,15 @@ public class Player_Movement : MonoBehaviour
         {
             StartCoroutine("Slide");
             SlideCooldown = 1f; 
+        }
+
+        if(direction.x < 0 && FacingRight)
+        {
+            HandleFlip();
+        }
+        else if(direction.x > 0 && !FacingRight)
+        {
+            HandleFlip();
         }
     }
 
@@ -87,6 +99,14 @@ public class Player_Movement : MonoBehaviour
     }
 
 
+
+    private void HandleFlip()
+    {
+        //Flip lol, in the name LEARN HOW TO READ CODE!!
+        FacingRight = !FacingRight;
+        transform.Rotate(0f, 180f, 0f);
+      
+    }
 
     private void FixedUpdate()
     {
