@@ -16,7 +16,6 @@ public class Player_Movement : MonoBehaviour
     Vector2 direction;
     bool CanSlide = true;
     bool IsSliding = false;
-    bool FacingRight = true; 
 
 
 
@@ -35,21 +34,13 @@ public class Player_Movement : MonoBehaviour
         //SlideCooldown goes from 2 to 0 using a set frame rate of seconds
         SlideCooldown -= Time.deltaTime; 
 
-        //If Player Presses "Left.Shift" or whatever fucking button we use for controller
+        //If Player Presses "Space" or whatever fucking button we use for controller
         if (Input.GetButtonDown("Fire3") && CanSlide && SlideCooldown <= 0f)
         {
             StartCoroutine("Slide");
             SlideCooldown = 1f; 
         }
 
-        if(direction.x < 0 && FacingRight && !IsSliding)
-        {
-            HandleFlip();
-        }
-        else if(direction.x > 0 && !FacingRight && !IsSliding)
-        {
-            HandleFlip();
-        }
     }
 
 
@@ -96,14 +87,6 @@ public class Player_Movement : MonoBehaviour
     }
 
 
-
-    private void HandleFlip()
-    {
-        //Flip lol, in the name LEARN HOW TO READ CODE!!
-        FacingRight = !FacingRight;
-        transform.Rotate(0f, 180f, 0f);
-      
-    }
 
     private void FixedUpdate()
     {

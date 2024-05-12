@@ -9,8 +9,8 @@ public class Shooting : MonoBehaviour
     public GameObject Bulletprefab;
     public Transform BulletSpawn;
     bool AllowedToShoot = true;
-    private FaceMouse FM; 
-
+    private FaceMouse FM;
+    public bool IsShooting = false; 
 
     [Header("Variables")]
     [SerializeField] private float shootingcooldown = 0.2f;
@@ -46,14 +46,16 @@ public class Shooting : MonoBehaviour
         {
             StartCoroutine(Shoot());
             bulletinscene++;
+            IsShooting = true;
         }
-
+    
         if(bulletinscene <= 4 && bulletinscene != 0)
         {
             FireRate -= Time.deltaTime;
 
             if (FireRate <= 0)
             {
+                IsShooting = false;
                 bulletinscene = 0;
                 FireRate = 0.8f ;
             }
