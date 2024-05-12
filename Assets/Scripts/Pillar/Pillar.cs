@@ -6,12 +6,14 @@ public class Pillar : MonoBehaviour
 {
     Vector2 MousePos;
     Collider2D hitcollider;
+    Collider2D playerCollider;
     GameObject SpawnedPillar; 
 
     [Header("Variables")]
     [SerializeField] private float PlaceRange = 3f;
     [SerializeField] private GameObject pillar;
     [SerializeField] private LayerMask PillarLayer;
+    [SerializeField] private LayerMask PlayerLayer;
     [SerializeField] private float CooldownTimer = 0f; 
 
 
@@ -35,11 +37,14 @@ public class Pillar : MonoBehaviour
 
         float distance = Vector2.Distance(transform.position, MousePos);
 
+      
+
         if (Input.GetButtonDown("Fire2") && distance <= PlaceRange && CooldownTimer <= 0f)
         {
-            hitcollider = Physics2D.OverlapCircle(MousePos, 0.4f , PillarLayer);
-            
-            if (hitcollider == null) 
+            hitcollider = Physics2D.OverlapCircle(MousePos, 0.4f, PillarLayer);
+            playerCollider = Physics2D.OverlapCircle(MousePos, 0.4f, PlayerLayer);
+
+            if (hitcollider == null && playerCollider == null) 
             {
                 if(SpawnedPillar != null)
                 {

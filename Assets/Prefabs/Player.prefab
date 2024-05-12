@@ -231,6 +231,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlaceRange: 8
   pillar: {fileID: 319767728978807126, guid: f99bfbe25fbd0e54a8a106ee6f731d94, type: 3}
+  PillarLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  PlayerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  CooldownTimer: 0
 --- !u!212 &8481030345555515359
 SpriteRenderer:
   m_ObjectHideFlags: 0
