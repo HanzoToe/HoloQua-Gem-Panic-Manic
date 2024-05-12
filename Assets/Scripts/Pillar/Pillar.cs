@@ -52,7 +52,7 @@ public class Pillar : MonoBehaviour
                 }
 
                SpawnedPillar = Instantiate(pillar, MousePos, Quaternion.identity);
-                CooldownTimer = 2f; 
+                CooldownTimer = 5f; 
             }
           
             Debug.Log(hitcollider);
