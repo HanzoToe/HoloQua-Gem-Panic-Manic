@@ -8,7 +8,8 @@ public class Shooting : MonoBehaviour
     public static Vector2 Mouseposition;
     public GameObject Bulletprefab;
     public Transform BulletSpawn;
-    bool AllowedToShoot = true; 
+    bool AllowedToShoot = true;
+    private FaceMouse FM; 
 
 
     [Header("Variables")]
@@ -24,14 +25,22 @@ public class Shooting : MonoBehaviour
         
     }
 
+    private void Awake()
+    {
+        FM = GetComponentInChildren<FaceMouse>();
+    }
+
     // Update is called once per frame
     void Update()
     {
+
         //Get the mouse position on the screen and translate it to the game
         Mouseposition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         Mouseposition.x = Mathf.Round(Mouseposition.x);
         Mouseposition.y = Mathf.Round(Mouseposition.y);
+
+        FM.Pointerposition = Mouseposition;
 
         if (Input.GetButton("Fire1") && AllowedToShoot && bulletinscene < 4)
         {

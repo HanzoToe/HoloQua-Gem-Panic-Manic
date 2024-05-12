@@ -223,10 +223,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3491046638606487578, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: FireRate
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 3877220633150505464, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
       propertyPath: m_Name
       value: Player
@@ -237,7 +233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7451510791815179797, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.41
       objectReference: {fileID: 0}
     - target: {fileID: 7451510791815179797, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
       propertyPath: m_LocalPosition.z

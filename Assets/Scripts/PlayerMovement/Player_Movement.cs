@@ -12,8 +12,6 @@ public class Player_Movement : MonoBehaviour
     
     [Header("Components")]
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private SpriteRenderer SR; 
-    
     
     Vector2 direction;
     bool CanSlide = true;
@@ -26,7 +24,6 @@ public class Player_Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        SR = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -45,11 +42,11 @@ public class Player_Movement : MonoBehaviour
             SlideCooldown = 1f; 
         }
 
-        if(direction.x < 0 && FacingRight)
+        if(direction.x < 0 && FacingRight && !IsSliding)
         {
             HandleFlip();
         }
-        else if(direction.x > 0 && !FacingRight)
+        else if(direction.x > 0 && !FacingRight && !IsSliding)
         {
             HandleFlip();
         }
