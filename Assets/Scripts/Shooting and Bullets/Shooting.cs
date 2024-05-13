@@ -51,7 +51,8 @@ public class Shooting : MonoBehaviour
             PunchScript.AllowedToPunch = false; 
         }
 
-        if (Input.GetButton("Fire1") && AllowedToShoot && bulletinscene < 4)
+
+        if (Input.GetButton("Fire1") && AllowedToShoot && !PunchScript.AllowedToPunch&& bulletinscene < 4)
         {
             StartCoroutine(Shoot());
             bulletinscene++;

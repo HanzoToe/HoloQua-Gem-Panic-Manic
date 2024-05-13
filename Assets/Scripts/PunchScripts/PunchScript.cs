@@ -1,7 +1,8 @@
     using System;
     using System.Collections;
     using System.Collections.Generic;
-    using UnityEngine;
+using Unity.VisualScripting;
+using UnityEngine;
 
     public class PunchScript : MonoBehaviour
     {
@@ -10,7 +11,8 @@
         public float radius = 4f;
         public LayerMask enemyLayer;
         public LayerMask PillarLayer;
-        public float MovementSpeed = 5f; 
+        public float Cooldown = 0f;
+        public SpriteRenderer SR;
 
         // Start is called before the first frame update
         void Start()
@@ -21,8 +23,7 @@
         // Update is called once per frame
         void Update()
         {
-        
-
+           Cooldown -= Time.deltaTime; 
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
@@ -30,24 +31,12 @@
                 Shooting.AllowedToShoot = false; 
             }
 
-            if(Input.GetButtonDown("Fire1") && AllowedToPunch)
+           if (Input.GetButton("Fire1") && AllowedToPunch && !Shooting.AllowedToShoot && Cooldown <= 0f)
             {
                 Attack();
-              MoveTowardsMousePosition();
+                Cooldown = 0.8f;
             }
         }
-
-    private void MoveTowardsMousePosition()
-    {
-        Vector3 PunchMoveTowards = PunchPoint.transform.position;
-        PunchMoveTowards.z = 0f;
-
-        Vector3 direction = PunchMoveTowards - transform.position;
-        direction.z = 0f;
-        direction.Normalize();
-
-        transform.position += direction * MovementSpeed * Time.deltaTime;
-    }
 
     private void Attack()
         {
