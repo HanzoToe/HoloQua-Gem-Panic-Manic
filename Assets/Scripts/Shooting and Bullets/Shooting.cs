@@ -8,8 +8,9 @@ public class Shooting : MonoBehaviour
     public static Vector2 Mouseposition;
     public GameObject Bulletprefab;
     public Transform BulletSpawn;
-    bool AllowedToShoot = true;
+    public static  bool AllowedToShoot = true;
     private FaceMouse FM;
+    private AimPunchTowardsMouse AM;
     public bool IsShooting = false; 
 
     [Header("Variables")]
@@ -28,6 +29,7 @@ public class Shooting : MonoBehaviour
     private void Awake()
     {
         FM = GetComponentInChildren<FaceMouse>();
+        AM = GetComponentInChildren<AimPunchTowardsMouse>();
     }
 
     // Update is called once per frame
@@ -41,6 +43,13 @@ public class Shooting : MonoBehaviour
         Mouseposition.y = Mathf.Round(Mouseposition.y);
 
         FM.Pointerposition = Mouseposition;
+        AM.Pointerposition = Mouseposition; 
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            AllowedToShoot = true;
+            PunchScript.AllowedToPunch = false; 
+        }
 
         if (Input.GetButton("Fire1") && AllowedToShoot && bulletinscene < 4)
         {
