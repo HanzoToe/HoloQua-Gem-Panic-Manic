@@ -415,7 +415,7 @@ PrefabInstance:
       objectReference: {fileID: 1757376249}
     - target: {fileID: 6939043890531171580, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
       propertyPath: MovementSpeed
-      value: 20
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6939043890531171580, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
       propertyPath: MoveForwardPunch

@@ -39,10 +39,10 @@
 
     private void MoveTowardsMousePosition()
     {
-        Vector3 mouseposition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseposition.z = 0f;
+        Vector3 PunchMoveTowards = PunchPoint.transform.position;
+        PunchMoveTowards.z = 0f;
 
-        Vector3 direction = mouseposition - transform.position;
+        Vector3 direction = PunchMoveTowards - transform.position;
         direction.z = 0f;
         direction.Normalize();
 
