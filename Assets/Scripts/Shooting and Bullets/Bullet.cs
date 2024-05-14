@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
 
     [Header("Variables")]
     [SerializeField] private float BulletSpeed = 5f;
+    [SerializeField] private int Damage = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,13 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        if (collision.CompareTag("Pillar"))
+        {
+            collision.gameObject.GetComponent<PillarHP>().Pillarhp -= Damage;
+        }
+
+
         Destroy(gameObject);
     }
 }

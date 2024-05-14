@@ -16,7 +16,7 @@ public class Shooting : MonoBehaviour
     [Header("Variables")]
     [SerializeField] private float shootingcooldown = 0.2f;
     [SerializeField] private int bulletinscene = 0;
-    [SerializeField] private float FireRate = 0.5f; 
+    [SerializeField] private float FireRate = 0.5f;
     
 
     
@@ -43,16 +43,10 @@ public class Shooting : MonoBehaviour
         Mouseposition.y = Mathf.Round(Mouseposition.y);
 
         FM.Pointerposition = Mouseposition;
-        AM.Pointerposition = Mouseposition; 
-
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            AllowedToShoot = true;
-            PunchScript.AllowedToPunch = false; 
-        }
+        AM.Pointerposition = Mouseposition;
 
 
-        if (Input.GetButton("Fire1") && AllowedToShoot && !PunchScript.AllowedToPunch&& bulletinscene < 4)
+        if (Input.GetButton("Fire1") && AllowedToShoot && bulletinscene < 4)
         {
             StartCoroutine(Shoot());
             bulletinscene++;

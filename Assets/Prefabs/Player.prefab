@@ -394,6 +394,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ad10b0e9f11344eb4566e615d98afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PunchPoint: {fileID: 7935113165543292866}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  PillarLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  Cooldown: 0
+  radius: 2
+  Damage: 3
+  DamageToCrystal: 10
 --- !u!1 &7253112212669027205
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +461,7 @@ GameObject:
   - component: {fileID: 3464295651036163842}
   - component: {fileID: 3135538719358403783}
   m_Layer: 3
-  m_Name: Circle
+  m_Name: PunchPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -465,7 +476,7 @@ Transform:
   m_GameObject: {fileID: 7935113165543292866}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.51, y: -0.0000000018626451, z: -0.04281669}
+  m_LocalPosition: {x: 1.93, y: -0.0000000018626451, z: -0.04281669}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -511,7 +522,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -536,7 +547,7 @@ GameObject:
   - component: {fileID: 5418569470974427589}
   m_Layer: 3
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

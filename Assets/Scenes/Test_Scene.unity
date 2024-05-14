@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!50 &226749807 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 8829500726337227681, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-  m_PrefabInstance: {fileID: 544162000269329995}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +227,7 @@ GameObject:
   - component: {fileID: 674461941}
   - component: {fileID: 674461943}
   m_Layer: 8
-  m_Name: Circle
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -340,16 +335,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.50000006
---- !u!1 &1757376249 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7935113165543292866, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-  m_PrefabInstance: {fileID: 544162000269329995}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1757376250 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 3135538719358403783, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-  m_PrefabInstance: {fileID: 544162000269329995}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &544162000269329995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -398,53 +383,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3135538719358403783, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: m_SortingOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3464295651036163842, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 6939043890531171580, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: SR
-      value: 
-      objectReference: {fileID: 1757376250}
-    - target: {fileID: 6939043890531171580, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 226749807}
-    - target: {fileID: 6939043890531171580, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: radius
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6939043890531171580, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: PunchPoint
-      value: 
-      objectReference: {fileID: 1757376249}
-    - target: {fileID: 6939043890531171580, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: MovementSpeed
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 6939043890531171580, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: MoveForwardPunch
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6939043890531171580, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: enemyLayer.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
-    - target: {fileID: 6939043890531171580, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: PillarLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 6990808567434840857, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7935113165543292866, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: m_Name
-      value: PunchPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

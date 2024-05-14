@@ -6,15 +6,18 @@ using UnityEngine;
 
     public class PunchScript : MonoBehaviour
     {
-        public static bool AllowedToPunch = false;
         public GameObject PunchPoint;
-        public float radius = 4f;
         public LayerMask enemyLayer;
         public LayerMask PillarLayer;
-        public float Cooldown = 0f;
-        public SpriteRenderer SR;
 
-        // Start is called before the first frame update
+        [Header("Variables")]
+        [SerializeField] private float Cooldown = 0f;
+        [SerializeField] private float radius = 4f;
+        [SerializeField] private int Damage = 3;
+        [SerializeField] private int DamageToCrystal = 10; 
+     
+
+          // Start is called before the first frame update
         void Start()
         {
 
@@ -23,15 +26,9 @@ using UnityEngine;
         // Update is called once per frame
         void Update()
         {
-           Cooldown -= Time.deltaTime; 
+            Cooldown -= Time.deltaTime; 
 
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                AllowedToPunch = true;
-                Shooting.AllowedToShoot = false; 
-            }
-
-           if (Input.GetButton("Fire1") && AllowedToPunch && !Shooting.AllowedToShoot && Cooldown <= 0f)
+            if (Input.GetKeyDown(KeyCode.E) && Cooldown <= 0f)
             {
                 Attack();
                 Cooldown = 0.8f;
@@ -39,7 +36,7 @@ using UnityEngine;
         }
 
     private void Attack()
-        {
+      {
             Collider2D[] enemy = Physics2D.OverlapCircleAll(PunchPoint.transform.position, radius, enemyLayer);
             Collider2D[] pillar = Physics2D.OverlapCircleAll(PunchPoint.transform.position, radius, PillarLayer);
 
@@ -51,11 +48,25 @@ using UnityEngine;
             foreach (Collider2D PillarGameObject in pillar)
             {
                 Debug.Log("Pillar hit");
+                PillarHP pillarhp = PillarGameObject.GetComponent<PillarHP>();
+                if (pillarhp != null)
+                {
+                 pillarhp.Pillarhp -= DamageToCrystal;
+                 if(pillarhp.Pillarhp <= 1)
+                 {
+                    pillarhp.SetDestroyedByPunch();
+                 }
+                 
+                }
+                
             }
         }
 
         private void OnDrawGizmos()
         {
             Gizmos.DrawWireSphere(PunchPoint.transform.position, radius);
-        }
+      }
+
+
+       
     }
