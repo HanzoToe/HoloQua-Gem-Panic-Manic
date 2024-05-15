@@ -670,7 +670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 407940790789666501}
   m_Layer: 0
-  m_Name: ShotgunBoolets
+  m_Name: ShotgunCrystals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
