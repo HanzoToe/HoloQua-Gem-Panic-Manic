@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  BulletSpeed: 10
+  BulletSpeed: 15
   Damage: 2
   PlayerTransform: {fileID: 564472621601555956, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
 --- !u!1 &1062065239749898394
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  BulletSpeed: 10
+  BulletSpeed: 15
   Damage: 2
   PlayerTransform: {fileID: 564472621601555956, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
 --- !u!1 &1197968032619771984
@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  BulletSpeed: 10
+  BulletSpeed: 15
   Damage: 2
   PlayerTransform: {fileID: 564472621601555956, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
 --- !u!1 &4953547840566346298
@@ -657,7 +657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  BulletSpeed: 10
+  BulletSpeed: 15
   Damage: 2
   PlayerTransform: {fileID: 564472621601555956, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
 --- !u!1 &5286105395572018482
@@ -858,6 +858,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  BulletSpeed: 10
+  BulletSpeed: 15
   Damage: 2
   PlayerTransform: {fileID: 564472621601555956, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}

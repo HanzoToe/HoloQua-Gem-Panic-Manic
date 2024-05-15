@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pillar
+  - PlayerGameObject
+  - Shrimp
   layers:
   - Default
   - TransparentFX

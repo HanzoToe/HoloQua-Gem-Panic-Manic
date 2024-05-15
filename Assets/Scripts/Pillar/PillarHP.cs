@@ -8,7 +8,9 @@ public class PillarHP : MonoBehaviour
     public int Pillarhp = 40;
     public GameObject ShotgunBullets;
     public bool destroyedbypunch = false;
-    public Transform bulletspawnPoint; 
+    public bool destroyedbyshrimp = false; 
+    public Transform bulletspawnPoint;
+    public Transform ShrimpBulletSpawnPoint; 
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +27,20 @@ public class PillarHP : MonoBehaviour
             {   
                 Spawnbullet();
             }
+
+            if (destroyedbyshrimp)
+            {
+                SpawnBulletShrimp();
+            }
+
             Destroy(gameObject);
         }
     }
 
-
+    private void SpawnBulletShrimp()
+    {
+        Instantiate(ShotgunBullets, ShrimpBulletSpawnPoint.transform.position, ShrimpBulletSpawnPoint.rotation);
+    }
 
     private void Spawnbullet()
     {
@@ -37,8 +48,15 @@ public class PillarHP : MonoBehaviour
         Instantiate(ShotgunBullets, bulletspawnPoint.transform.position, bulletspawnPoint.rotation);
     }
 
+
+
     public void SetDestroyedByPunch()
     {
         destroyedbypunch = true; 
+    }
+
+    public void SetDestroyedByShrimp()
+    {
+        destroyedbyshrimp = true;
     }
 }

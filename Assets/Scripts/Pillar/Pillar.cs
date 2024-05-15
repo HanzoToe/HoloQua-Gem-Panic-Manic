@@ -7,6 +7,7 @@ public class Pillar : MonoBehaviour
     Vector2 MousePos;
     Collider2D hitcollider;
     Collider2D playerCollider;
+    Collider2D enemyCollider; 
     GameObject SpawnedPillar; 
 
     [Header("Variables")]
@@ -14,6 +15,7 @@ public class Pillar : MonoBehaviour
     [SerializeField] private GameObject pillar;
     [SerializeField] private LayerMask PillarLayer;
     [SerializeField] private LayerMask PlayerLayer;
+    [SerializeField] private LayerMask EnemyLayer;
     [SerializeField] private float CooldownTimer = 0f; 
 
 
@@ -43,8 +45,10 @@ public class Pillar : MonoBehaviour
         {
             hitcollider = Physics2D.OverlapCircle(MousePos, 0.4f, PillarLayer);
             playerCollider = Physics2D.OverlapCircle(MousePos, 0.4f, PlayerLayer);
+            enemyCollider = Physics2D.OverlapCircle(MousePos, 0.4f, EnemyLayer);
 
-            if (hitcollider == null && playerCollider == null) 
+
+            if (hitcollider == null && playerCollider == null && enemyCollider == null) 
             {
                 if(SpawnedPillar != null)
                 {
