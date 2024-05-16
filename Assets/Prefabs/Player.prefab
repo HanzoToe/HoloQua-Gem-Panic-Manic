@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 6939043890531171580}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Player
+  m_TagString: PlayerGameObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -284,6 +284,9 @@ MonoBehaviour:
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 8
+  EnemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
   CooldownTimer: 0
 --- !u!212 &8481030345555515359
 SpriteRenderer:
