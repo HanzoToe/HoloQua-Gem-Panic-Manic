@@ -52,4 +52,9 @@ public class JellyFishShooting : MonoBehaviour
             Instantiate(bulletprefab, shootingspawn.position, shootingspawn.rotation);
             yield return null;
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, viewrange);
+    }
 }
