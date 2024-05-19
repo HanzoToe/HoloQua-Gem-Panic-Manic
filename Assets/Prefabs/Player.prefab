@@ -360,7 +360,7 @@ MonoBehaviour:
   animator: {fileID: 2817681659368625975}
   Cooldown: 0
   radius: 2
-  Damage: 3
+  Damage: 2
   DamageToCrystal: 10
 --- !u!114 &6655937963607972636
 MonoBehaviour:

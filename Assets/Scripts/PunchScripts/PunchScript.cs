@@ -17,7 +17,7 @@ using UnityEngine;
         [Header("Variables")]
         [SerializeField] private float Cooldown = 0f;
         [SerializeField] private float radius = 4f;
-        [SerializeField] private int Damage = 3;
+        [SerializeField] private int Damage = 2;
         [SerializeField] private int DamageToCrystal = 10; 
      
 
@@ -51,6 +51,27 @@ using UnityEngine;
             foreach (Collider2D enemyGameObject in enemy)
             {
                 Debug.Log("Enemy hit"); 
+                JellyFish_Logic jellyFish_Logic = enemyGameObject.GetComponent<JellyFish_Logic>();
+                Shork_Logic shork_Logic = enemyGameObject.GetComponent<Shork_Logic>();
+                OctoPus_Logic octoPus_Logic = enemyGameObject.GetComponent<OctoPus_Logic>();
+                Shrimp_Logic shrimp_Logic = enemyGameObject.GetComponent <Shrimp_Logic>();
+
+                if(jellyFish_Logic != null)
+                {
+                  jellyFish_Logic.JellHp -= Damage; 
+                }
+                else if(shork_Logic != null)
+                {
+                  shork_Logic.shorkhp -= Damage;
+                }
+                else if(octoPus_Logic != null)
+                {
+                  octoPus_Logic.OctoHp -= Damage;
+                }
+                else if(shrimp_Logic != null)
+                {
+                  shrimp_Logic.ShrimpHp -= Damage;
+                }
             }
 
             foreach (Collider2D PillarGameObject in pillar)
@@ -68,6 +89,7 @@ using UnityEngine;
                 }
                 
             }
+
         }
 
         private void OnDrawGizmos()
