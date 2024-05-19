@@ -7,8 +7,12 @@ using UnityEngine;
     public class PunchScript : MonoBehaviour
     {
         public GameObject PunchPoint;
+        public GameObject WeaponHandler;
+        public Shooting Sscript; 
         public LayerMask enemyLayer;
         public LayerMask PillarLayer;
+        public Animator animator;
+        
 
         [Header("Variables")]
         [SerializeField] private float Cooldown = 0f;
@@ -30,8 +34,12 @@ using UnityEngine;
 
             if (Input.GetKeyDown(KeyCode.E) && Cooldown <= 0f)
             {
+                WeaponHandler.SetActive(false);
+                Sscript.enabled = false;
                 Attack();
                 Cooldown = 0.8f;
+                animator.SetBool("Punching", true);
+                StartCoroutine(ResetPunchingAfterDelay(0.5f));
             }
         }
 
@@ -51,11 +59,11 @@ using UnityEngine;
                 PillarHP pillarhp = PillarGameObject.GetComponent<PillarHP>();
                 if (pillarhp != null)
                 {
-                 pillarhp.Pillarhp -= DamageToCrystal;
-                 if(pillarhp.Pillarhp <= 1)
-                 {
+                    pillarhp.Pillarhp -= DamageToCrystal;
+                    if(pillarhp.Pillarhp <= 1)
+                    {
                     pillarhp.SetDestroyedByPunch();
-                 }
+                    }
                  
                 }
                 
@@ -65,8 +73,14 @@ using UnityEngine;
         private void OnDrawGizmos()
         {
             Gizmos.DrawWireSphere(PunchPoint.transform.position, radius);
-      }
+        }
 
-
-       
+      private IEnumerator ResetPunchingAfterDelay(float delay)
+     {
+        yield return new WaitForSeconds(delay);
+        animator.SetBool("Punching", false);
+        WeaponHandler.SetActive(true);
+        Sscript.enabled = true;
     }
+
+}

@@ -16,6 +16,7 @@ public class Player_Movement : MonoBehaviour
     Vector2 direction;
     bool CanSlide = true;
     bool IsSliding = false;
+    public Animator animator; 
 
 
 
@@ -28,6 +29,8 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetFloat("WalkingAnimation", Mathf.Abs(direction.magnitude));
+
         //Gets the direction needed
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
@@ -38,7 +41,7 @@ public class Player_Movement : MonoBehaviour
         if (Input.GetButtonDown("Fire3") && CanSlide && SlideCooldown <= 0f)
         {
             StartCoroutine("Slide");
-            SlideCooldown = 1f; 
+            SlideCooldown = 1f;
         }
 
     }
@@ -46,6 +49,9 @@ public class Player_Movement : MonoBehaviour
 
     IEnumerator Slide()
     {
+
+        
+
         // Store Original Position
         Vector2 initialPosition = transform.position;
 
@@ -62,6 +68,8 @@ public class Player_Movement : MonoBehaviour
         float elapsedtime = 0f;
         while(elapsedtime < SlideTime)
         {
+            animator.SetBool("Dashing", true);
+
             //Calculate interpolation factor (0 and 1) based on elapsed time and slide distance 
             float t = elapsedtime / SlideTime;
 
@@ -84,6 +92,8 @@ public class Player_Movement : MonoBehaviour
 
         //Sliding no
         IsSliding = false;
+
+        animator.SetBool("Dashing", false);
     }
 
 
