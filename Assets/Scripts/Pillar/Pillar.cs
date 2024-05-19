@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,8 @@ public class Pillar : MonoBehaviour
     Collider2D hitcollider;
     Collider2D playerCollider;
     Collider2D enemyCollider; 
-    GameObject SpawnedPillar; 
+    GameObject SpawnedPillar;
+    LineRenderer lineRenderer;
 
     [Header("Variables")]
     [SerializeField] private float PlaceRange = 3f;
@@ -16,13 +18,32 @@ public class Pillar : MonoBehaviour
     [SerializeField] private LayerMask PillarLayer;
     [SerializeField] private LayerMask PlayerLayer;
     [SerializeField] private LayerMask EnemyLayer;
-    [SerializeField] private float CooldownTimer = 0f; 
+    [SerializeField] private float CooldownTimer = 0f;
+    [SerializeField] private int circleSegments = 100;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.positionCount = circleSegments + 1;
+        lineRenderer.loop = true;
+        lineRenderer.useWorldSpace = false;
+        DrawCircle();
+    }
+
+    private void DrawCircle()
+    {
+        float angle = 0f;
+        for (int i = 0; i < circleSegments + 1; i++)
+        {
+            float x = Mathf.Sin(Mathf.Deg2Rad * angle) * PlaceRange;
+            float y = Mathf.Cos(Mathf.Deg2Rad * angle) * PlaceRange;
+
+            lineRenderer.SetPosition(i, new Vector3(x, y, 0));
+            angle += 360f / circleSegments;
+        }
     }
 
     // Update is called once per frame

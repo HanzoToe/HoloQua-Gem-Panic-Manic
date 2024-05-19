@@ -1109,11 +1109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43997e2105155814981fc98ade7b2bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &2079286960 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 9203266839752938597, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-  m_PrefabInstance: {fileID: 544162000269329995}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &544162000269329995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1161,46 +1156,6 @@ PrefabInstance:
     - target: {fileID: 564472621601555956, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6655937963607972636, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: maxhp
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6655937963607972636, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: collider
-      value: 
-      objectReference: {fileID: 2079286960}
-    - target: {fileID: 6655937963607972636, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: damage.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6655937963607972636, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: damage.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6655937963607972636, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: damage.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 692343344}
-    - target: {fileID: 6655937963607972636, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: damage.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6655937963607972636, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: damage.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetValue
-      objectReference: {fileID: 0}
-    - target: {fileID: 6655937963607972636, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: damage.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HpBar_Script, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6655937963607972636, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: damage.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 6939043890531171580, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: PillarLayer.m_Bits
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6990808567434840857, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
       propertyPath: m_Name
