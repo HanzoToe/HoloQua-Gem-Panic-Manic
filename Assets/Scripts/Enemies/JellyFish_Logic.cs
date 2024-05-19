@@ -5,7 +5,7 @@ using UnityEngine;
 public class JellyFish_Logic : MonoBehaviour
 {
 
-    public int JellHp = 6; 
+    public int JellHp = 8; 
 
     // Start is called before the first frame update
     void Start()

@@ -12,18 +12,19 @@ TagManager:
   - Octo
   - Bullet
   - Crystal
+  - EnemyBoolet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - Pillar
   - Water
   - UI
   - Bullet
-  - Pillar
+  - Player
   - Enemy
   - EnemyBullet
-  - 
+  - Crystal
   - 
   - 
   - 

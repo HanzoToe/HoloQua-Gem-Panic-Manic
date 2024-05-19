@@ -165,5 +165,6 @@ MonoBehaviour:
   Chasingpillar: 0
   playerGameObject: {fileID: 0}
   pillarGameObject: {fileID: 0}
+  shorkhp: 3
   movementspeed: 7.5
   ViewRange: 7

@@ -11,7 +11,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private float SlideCooldown = 0f; 
     
     [Header("Components")]
-    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] public Rigidbody2D rb;
     
     Vector2 direction;
     bool CanSlide = true;

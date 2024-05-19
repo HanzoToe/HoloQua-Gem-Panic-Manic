@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6642663905312487818}
   - component: {fileID: -6159678114994256223}
   - component: {fileID: -4448620014785524924}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: PILLAR
   m_TagString: Pillar
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2689479909053651926}
   - component: {fileID: 3256131282539842815}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Shrimp_Bullet_SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7740457792883701016}
   - component: {fileID: 7453472533631186257}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Bullet_SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

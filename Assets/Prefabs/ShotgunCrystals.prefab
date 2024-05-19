@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3299422179604163804}
   - component: {fileID: 5378152842328336176}
   - component: {fileID: 1455344185009288219}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle (3)
   m_TagString: Crystal
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 7847803346293874619}
   - component: {fileID: 8586125233766856332}
   - component: {fileID: 6058840711944246144}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle (2)
   m_TagString: Crystal
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 8550885227642761446}
   - component: {fileID: 348569201284877189}
   - component: {fileID: 3107294985745682979}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle (4)
   m_TagString: Crystal
   m_Icon: {fileID: 0}
@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 4104584612373417606}
   - component: {fileID: 1911752658646945312}
   - component: {fileID: 1457011271863862920}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle (1)
   m_TagString: Crystal
   m_Icon: {fileID: 0}
@@ -721,7 +721,7 @@ GameObject:
   - component: {fileID: 6601054440334959578}
   - component: {fileID: 4582346432222306874}
   - component: {fileID: 4601219948041330129}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle
   m_TagString: Crystal
   m_Icon: {fileID: 0}

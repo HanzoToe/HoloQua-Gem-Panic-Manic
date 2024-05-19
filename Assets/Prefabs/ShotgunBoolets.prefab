@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 2089513959948805560}
   m_Layer: 9
   m_Name: Circle (4)
-  m_TagString: Untagged
+  m_TagString: EnemyBoolet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 2656556701331687224}
   m_Layer: 9
   m_Name: Circle (2)
-  m_TagString: Untagged
+  m_TagString: EnemyBoolet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 2450507533110072909}
   m_Layer: 9
   m_Name: Circle (1)
-  m_TagString: Untagged
+  m_TagString: EnemyBoolet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -546,7 +546,7 @@ GameObject:
   - component: {fileID: 9045163953136897790}
   m_Layer: 9
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: EnemyBoolet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 8975201088098203094}
   m_Layer: 9
   m_Name: Circle (3)
-  m_TagString: Untagged
+  m_TagString: EnemyBoolet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
