@@ -12,7 +12,9 @@ public class CrystalShards : MonoBehaviour
     [SerializeField] private int Damage = 1;
 
 
-    public Transform PlayerTransform; 
+    public Transform PlayerTransform;
+    public LayerMask Enemy; 
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,8 +32,12 @@ public class CrystalShards : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("PlayerGameObject"))
+        {
+            Destroy(gameObject);
+            Player_hp.hp -= 1;
+        }
 
-
-        
+        Destroy(gameObject);
     }
 }

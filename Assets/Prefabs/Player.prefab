@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 430610398892632509}
   - component: {fileID: 9203266839752938597}
   - component: {fileID: 6939043890531171580}
+  - component: {fileID: 6655937963607972636}
   m_Layer: 3
   m_Name: Player
   m_TagString: PlayerGameObject
@@ -346,16 +347,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PunchPoint: {fileID: 7935113165543292866}
+  WeaponHandler: {fileID: 7253112212669027205}
+  Sscript: {fileID: 5827230543788335904}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
   PillarLayer:
     serializedVersion: 2
     m_Bits: 128
+  animator: {fileID: 2817681659368625975}
   Cooldown: 0
   radius: 2
   Damage: 3
   DamageToCrystal: 10
+--- !u!114 &6655937963607972636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6990808567434840857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43997e2105155814981fc98ade7b2bc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2817681659368625975}
+  spriteRenderer: {fileID: 4316032257060890343}
+  deathsprite: {fileID: -2014737630, guid: 7b4f2441d7c66a94a9098c9c1fa1de6b, type: 3}
+  weaponhandler: {fileID: 7253112212669027205}
+  punchHandler: {fileID: 6267779785788592799}
+  rend: {fileID: 0}
+  c: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7253112212669027205
 GameObject:
   m_ObjectHideFlags: 0

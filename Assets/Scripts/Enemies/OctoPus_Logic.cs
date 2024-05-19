@@ -1,74 +1,70 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class OctoPus_Logic: MonoBehaviour
+public class OctoPus_Logic : MonoBehaviour
 {
     private Rigidbody2D rb;
     public GameObject player;
-    public GameObject bulletprefab; 
+    public GameObject bulletprefab;
     public float movespeed = 3f;
     public float viewrange = 5f;
-    public float SprayTimer = 0f;
-    bool AllowedToBlast = true;
-    Vector2 moving; 
+    public float sprayDuration = 3f;  // Duration of spraying bullets
+    public float spawnInterval = 0.2f; // Interval between bullet spawns
+    private bool allowedToBlast = true;
+    private Vector2 moving;
+    public int OctoHp = 4;
 
-
-    // Start is called before the first frame update
     void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("PlayerGameObject");
+    }
 
-        float distance = Vector2.Distance(player.transform.position, transform.position); 
+    void Update()
+    {
+        float distance = Vector2.Distance(player.transform.position, transform.position);
 
-        if(distance <= viewrange && AllowedToBlast)
+        if (distance <= viewrange && allowedToBlast)
         {
-            StartCoroutine(StartBlasting()); 
+            StartCoroutine(StartBlasting());
         }
 
-        if (SprayTimer >= 3f)
+        if(OctoHp <= 0)
         {
-            StopCoroutine(StartBlasting());
-            AllowedToBlast = false;
-        }
-
-        if(!AllowedToBlast)
-        {
-            SprayTimer -= Time.deltaTime;
-            StartCoroutine(RunAway());
-        }
-
-        if(SprayTimer <= 0f)
-        {
-            AllowedToBlast = true;
-            rb.velocity = Vector3.zero;
-            StopCoroutine(RunAway());
+            Destroy(gameObject);
         }
     }
 
     IEnumerator StartBlasting()
     {
-       Instantiate(bulletprefab, gameObject.transform.position, Quaternion.identity);
-        yield return null;
+        allowedToBlast = false;
+        float sprayTimer = 0f;
 
-        SprayTimer += Time.deltaTime;
+        while (sprayTimer < sprayDuration)
+        {
+            Instantiate(bulletprefab, transform.position, Quaternion.identity);
+            sprayTimer += spawnInterval;
+            yield return new WaitForSeconds(spawnInterval);
+        }
+
+        StartCoroutine(RunAway());
     }
 
     IEnumerator RunAway()
     {
-        moving = new Vector2(transform.position.x - player.transform.position.x, transform.position.y - player.transform.position.y);
-        rb.velocity = moving.normalized * movespeed; 
-        yield return null;
-    }
+        float runAwayDuration = 3f; // Adjust this value as needed
 
+        while (runAwayDuration > 0f)
+        {
+            moving = new Vector2(transform.position.x - player.transform.position.x, transform.position.y - player.transform.position.y);
+            rb.velocity = moving.normalized * movespeed;
+            runAwayDuration -= Time.deltaTime;
+            yield return null;
+        }
+
+        rb.velocity = Vector3.zero;
+        allowedToBlast = true;
+    }
 
     private void OnDrawGizmos()
     {
@@ -77,10 +73,25 @@ public class OctoPus_Logic: MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+       
+
         if (collision.collider.CompareTag("PlayerGameObject"))
         {
-            rb.isKinematic = true;
+            Player_hp.hp -= 1;
             Debug.Log("Player take damage");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Bullet"))
+        {
+            OctoHp -= 1;
+        }
+
+        if (collision.CompareTag("Crystal"))
+        {
+            OctoHp -= 1;
         }
     }
 }

@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();  
         Vector2 direction = new Vector2(Shooting.Mouseposition.x - transform.position.x, Shooting.Mouseposition.y - transform.position.y).normalized;
-        rb.velocity = direction * BulletSpeed;
+        rb.velocity = direction.normalized * BulletSpeed;
     }
 
     // Update is called once per frame

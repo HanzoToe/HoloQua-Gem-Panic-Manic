@@ -12,7 +12,7 @@ public class FaceMouse : MonoBehaviour
     {
 
         Vector2 direction = (Pointerposition - (Vector2)transform.position).normalized;
-        transform.right = direction;
+        transform.right = direction.normalized;
 
         Vector2 scale = transform.localScale;
         if(direction.x < 0)

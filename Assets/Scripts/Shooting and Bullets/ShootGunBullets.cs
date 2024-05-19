@@ -30,6 +30,23 @@ public class ShootGunBullets : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("PlayerGameObject"))
+        {
             Destroy(gameObject);
+            Player_hp.hp -= 1;
+        }
+
+        if (collision.CompareTag("Pillar"))
+        {
+            PillarHP pillarHP = collision.GetComponent<PillarHP>();
+
+            if (pillarHP != null)
+            {
+                pillarHP.Pillarhp -= 1;
+
+            }
+
+            Destroy(gameObject);
+        }
     }
 }

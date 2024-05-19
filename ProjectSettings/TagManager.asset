@@ -8,6 +8,10 @@ TagManager:
   - PlayerGameObject
   - Shrimp
   - Shork
+  - Jelly
+  - Octo
+  - Bullet
+  - Crystal
   layers:
   - Default
   - TransparentFX

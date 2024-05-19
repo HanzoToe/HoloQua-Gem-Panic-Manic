@@ -10,7 +10,8 @@ public class PillarHP : MonoBehaviour
     public bool destroyedbypunch = false;
     public bool destroyedbyshrimp = false; 
     public Transform bulletspawnPoint;
-    public Transform ShrimpBulletSpawnPoint; 
+    public Transform ShrimpBulletSpawnPoint;
+    public LayerMask enemybullets; 
 
     // Start is called before the first frame update
     void Start()

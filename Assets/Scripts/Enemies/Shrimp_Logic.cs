@@ -13,7 +13,7 @@ public class Shrimp_Logic : MonoBehaviour
 
     public GameObject player;
     public Vector2 Moving;
-    public int TestDamage = 0; 
+    public int ShrimpHp = 3; 
 
 
     // Start is called before the first frame update
@@ -39,7 +39,12 @@ public class Shrimp_Logic : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
 
-        Debug.Log(TestDamage);
+       
+
+        if(ShrimpHp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void MoveTowardsPlayer()
@@ -50,9 +55,10 @@ public class Shrimp_Logic : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         if (collision.collider.CompareTag("PlayerGameObject"))
         {
-            TestDamage += 1;
+            Player_hp.hp -= 1;
             Destroy(gameObject); 
         }
 
@@ -70,7 +76,18 @@ public class Shrimp_Logic : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Bullet"))
+        {
+            ShrimpHp -= 1;
+        }
 
+        if (collision.CompareTag("Crystal"))
+        {
+            ShrimpHp -= 1;
+        }
+    }
 
     private void OnDrawGizmos()
     {

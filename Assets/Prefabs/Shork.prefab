@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2364959142336600358}
   - component: {fileID: 4414194147288445898}
   - component: {fileID: 3958913314467827070}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shork
   m_TagString: Shork
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0

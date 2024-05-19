@@ -39,7 +39,7 @@ public class JellyFishShooting : MonoBehaviour
             timer += Time.deltaTime; 
         }
 
-        if (timer >= 0.5f)
+        if (timer >= 0.8f)
         {
             bulletsshot = 0;
             timer = 0f; 

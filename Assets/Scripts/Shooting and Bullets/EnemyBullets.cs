@@ -6,13 +6,13 @@ public class EnemyBullets : MonoBehaviour
 {
     private GameObject player;
     private Rigidbody2D rb;
-    public float BulletSpeed = 12f; 
-
+    public float BulletSpeed = 12f;
 
 
     // Start is called before the first frame update
     void Start()
     {
+  
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("PlayerGameObject");
 
@@ -32,6 +32,23 @@ public class EnemyBullets : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.CompareTag("PlayerGameObject"))
+        {
+            Destroy(gameObject);
+            Player_hp.hp -= 1;
+        }
+
+        if (collision.CompareTag("Pillar"))
+        {
+            PillarHP pillarHP = collision.GetComponent<PillarHP>();
+
+            if (pillarHP != null)
+            {
+                pillarHP.Pillarhp -= 1;
+
+            }
+
+            Destroy(gameObject);
+        }
     }
 }

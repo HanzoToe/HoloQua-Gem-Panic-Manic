@@ -141,6 +141,9 @@ MonoBehaviour:
   destroyedbyshrimp: 0
   bulletspawnPoint: {fileID: 7740457792883701016}
   ShrimpBulletSpawnPoint: {fileID: 2689479909053651926}
+  enemybullets:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &958763627909492983
 GameObject:
   m_ObjectHideFlags: 0

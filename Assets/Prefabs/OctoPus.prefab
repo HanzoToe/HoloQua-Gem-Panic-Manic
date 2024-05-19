@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2076631898925219537}
   m_Layer: 8
   m_Name: OctoPus
-  m_TagString: Untagged
+  m_TagString: Octo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,11 +130,11 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2205785027462408024}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -165,4 +165,5 @@ MonoBehaviour:
   bulletprefab: {fileID: 2932729369401081647, guid: 83fe92f7db65da247b6beea61915d5b7, type: 3}
   movespeed: 2
   viewrange: 8
-  SprayTimer: 0
+  sprayDuration: 3
+  spawnInterval: 0.2
