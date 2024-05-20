@@ -61,10 +61,18 @@ public class Shrimp_Logic : MonoBehaviour
         animator.SetBool("Death", true);
         DamageAudio.Play();
         rb.velocity = Vector2.zero;
+
+        // Disable the collider to prevent further collisions
+        Collider2D collider = GetComponent<Collider2D>();
+        if (collider != null)
+        {
+            collider.enabled = false;
+        }
+
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
-
     }
+
 
 
     private void MoveTowardsPlayer()

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class Player_hp : MonoBehaviour
@@ -54,11 +55,19 @@ public class Player_hp : MonoBehaviour
             pil.enabled = false;
             PS.enabled = false;
             collider.enabled = false;
+            
+            Invoke("Restart", 2f);
         }
 
         
 
     }
+
+    private void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

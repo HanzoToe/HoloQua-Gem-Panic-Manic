@@ -26,11 +26,10 @@ public class OctoPus_Logic : MonoBehaviour
 
     void Update()
     {
-        if (isDying) return;
 
         float distance = Vector2.Distance(player.transform.position, transform.position);
 
-        if (distance <= viewrange && allowedToBlast)
+        if (distance <= viewrange && allowedToBlast && !isDying)
         {
             StartCoroutine(StartBlasting());
         }
@@ -40,10 +39,12 @@ public class OctoPus_Logic : MonoBehaviour
             StartCoroutine(PlayDeathAndDestroy());
         }
 
+ 
     }
 
     IEnumerator PlayDeathAndDestroy()
     {
+
         isDying = true;
         animator.SetBool("Death", true);
         DamageAudio.Play();
@@ -57,15 +58,17 @@ public class OctoPus_Logic : MonoBehaviour
     IEnumerator StartBlasting()
     {
 
-
         allowedToBlast = false;
         float sprayTimer = 0f;
+
 
         animator.SetBool("Shooting", true);
         animator.SetBool("Tired", false);
 
         while (sprayTimer < sprayDuration)
         {
+            if (isDying) yield break;
+
             Instantiate(bulletprefab, transform.position, Quaternion.identity);
             sprayTimer += spawnInterval;
             PlayerPos = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
@@ -88,6 +91,7 @@ public class OctoPus_Logic : MonoBehaviour
 
     IEnumerator RunAway()
     {
+        if (isDying) yield break;
         animator.SetBool("Shooting", false);
         animator.SetBool("Tired", true);
 
