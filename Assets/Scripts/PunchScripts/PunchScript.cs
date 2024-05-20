@@ -12,6 +12,7 @@ using UnityEngine;
         public LayerMask enemyLayer;
         public LayerMask PillarLayer;
         public Animator animator;
+        public AudioSource PunchAudio;
         
 
         [Header("Variables")]
@@ -34,6 +35,7 @@ using UnityEngine;
 
             if (Input.GetKeyDown(KeyCode.E) && Cooldown <= 0f)
             {
+                PunchAudio.Play();
                 WeaponHandler.SetActive(false);
                 Sscript.enabled = false;
                 Attack();

@@ -16,7 +16,8 @@ public class Player_Movement : MonoBehaviour
     Vector2 direction;
     bool CanSlide = true;
     bool IsSliding = false;
-    public Animator animator; 
+    public Animator animator;
+    public AudioSource DashAudio; 
 
 
 
@@ -40,6 +41,7 @@ public class Player_Movement : MonoBehaviour
         //If Player Presses "Space" or whatever fucking button we use for controller
         if (Input.GetButtonDown("Fire3") && CanSlide && SlideCooldown <= 0f)
         {
+            DashAudio.Play();
             StartCoroutine("Slide");
             SlideCooldown = 1f;
         }

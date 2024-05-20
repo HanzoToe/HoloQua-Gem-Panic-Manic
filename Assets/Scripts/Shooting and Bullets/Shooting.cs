@@ -11,7 +11,8 @@ public class Shooting : MonoBehaviour
     public static  bool AllowedToShoot = true;
     private FaceMouse FM;
     private AimPunchTowardsMouse AM;
-    public bool IsShooting = false; 
+    public bool IsShooting = false;
+    public AudioSource gunAudioSource;
 
     [Header("Variables")]
     [SerializeField] private float shootingcooldown = 0.2f;
@@ -23,7 +24,11 @@ public class Shooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Ensure the AudioSource is attached
+        if (gunAudioSource == null)
+        {
+            gunAudioSource = GetComponent<AudioSource>();
+        }
     }
 
     private void Awake()
@@ -51,6 +56,7 @@ public class Shooting : MonoBehaviour
             StartCoroutine(Shoot());
             bulletinscene++;
             IsShooting = true;
+            gunAudioSource.Play();
         }
     
         if(bulletinscene <= 4 && bulletinscene != 0)

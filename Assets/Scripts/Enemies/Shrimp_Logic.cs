@@ -9,11 +9,12 @@ public class Shrimp_Logic : MonoBehaviour
     [SerializeField] private float MovementSpeed = 5f;
     [SerializeField] private float ViewDistance = 5f;
     [SerializeField] Rigidbody2D rb;
-    
 
+    public AudioSource DamageAudio; 
     public GameObject player;
     public Vector2 Moving;
-    public int ShrimpHp = 3; 
+    public int ShrimpHp = 3;
+    public Animator animator; 
 
 
     // Start is called before the first frame update
@@ -33,16 +34,20 @@ public class Shrimp_Logic : MonoBehaviour
         if(distance <= ViewDistance)
         {
             MoveTowardsPlayer();
+            animator.SetBool("Walking", true); 
+
         }
         else if(distance > ViewDistance)
         {
             rb.velocity = Vector2.zero;
+            animator.SetBool("Walking", false);
         }
 
        
 
         if(ShrimpHp <= 0)
         {
+            DamageAudio.Play();
             Destroy(gameObject);
         }
     }
@@ -92,11 +97,13 @@ public class Shrimp_Logic : MonoBehaviour
         if (collision.CompareTag("Bullet"))
         {
             ShrimpHp -= 1;
+            DamageAudio.Play();
         }
 
         if (collision.CompareTag("Crystal"))
         {
             ShrimpHp -= 1;
+            DamageAudio.Play();
         }
     }
 

@@ -5,7 +5,8 @@ using UnityEngine;
 public class JellyFish_Logic : MonoBehaviour
 {
 
-    public int JellHp = 8; 
+    public int JellHp = 8;
+    public AudioSource DamageAudio; 
 
     // Start is called before the first frame update
     void Start()
@@ -40,11 +41,13 @@ public class JellyFish_Logic : MonoBehaviour
         if (collision.CompareTag("Bullet"))
         {
             JellHp -= 1;
+            DamageAudio.Play();
         }
 
         if (collision.CompareTag("Crystal"))
         {
             JellHp -= 1;
+            DamageAudio.Play();
         }
     }
 }

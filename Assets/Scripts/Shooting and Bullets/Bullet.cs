@@ -34,7 +34,6 @@ public class Bullet : MonoBehaviour
             collision.gameObject.GetComponent<PillarHP>().Pillarhp -= Damage;
         }
 
-
         Destroy(gameObject);
     }
 }

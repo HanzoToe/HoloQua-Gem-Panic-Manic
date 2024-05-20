@@ -11,8 +11,8 @@ public class JellyFishShooting : MonoBehaviour
     public float viewrange = 5f;
     public int bulletsshot = 0;
     public float timer = 0f;
-    public float shootingcooldown = 0.2f; 
-    
+    public float shootingcooldown = 0.2f;
+    public Animator animator; 
 
 
     // Start is called before the first frame update
@@ -28,21 +28,23 @@ public class JellyFishShooting : MonoBehaviour
 
         if (Distance <= viewrange && bulletsshot < 1)
         {
+            animator.SetBool("Shooting", true); 
             StartCoroutine(Shoot());
             bulletsshot++;
-            
+   
         }
 
         
         if(bulletsshot >= 1)
         {
-            timer += Time.deltaTime; 
+            timer += Time.deltaTime;
         }
 
         if (timer >= 0.8f)
         {
             bulletsshot = 0;
-            timer = 0f; 
+            timer = 0f;
+            animator.SetBool("Shooting", false);
         }
 
     }

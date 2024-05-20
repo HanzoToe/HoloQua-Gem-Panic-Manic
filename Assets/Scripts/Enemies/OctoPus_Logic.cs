@@ -13,6 +13,8 @@ public class OctoPus_Logic : MonoBehaviour
     private bool allowedToBlast = true;
     private Vector2 moving;
     public int OctoHp = 4;
+    public AudioSource DamageAudio;
+    public Animator animator; 
 
     void Start()
     {
@@ -40,6 +42,9 @@ public class OctoPus_Logic : MonoBehaviour
         allowedToBlast = false;
         float sprayTimer = 0f;
 
+        animator.SetBool("Shooting", true);
+        animator.SetBool("Tired", false);
+
         while (sprayTimer < sprayDuration)
         {
             Instantiate(bulletprefab, transform.position, Quaternion.identity);
@@ -52,6 +57,9 @@ public class OctoPus_Logic : MonoBehaviour
 
     IEnumerator RunAway()
     {
+        animator.SetBool("Shooting", false);
+        animator.SetBool("Tired", true);
+
         float runAwayDuration = 3f; // Adjust this value as needed
 
         while (runAwayDuration > 0f)
@@ -64,6 +72,8 @@ public class OctoPus_Logic : MonoBehaviour
 
         rb.velocity = Vector3.zero;
         allowedToBlast = true;
+        animator.SetBool("Shooting", false);
+        animator.SetBool("Tired", false);
     }
 
     private void OnDrawGizmos()
@@ -87,11 +97,13 @@ public class OctoPus_Logic : MonoBehaviour
         if (collision.CompareTag("Bullet"))
         {
             OctoHp -= 1;
+            DamageAudio.Play();
         }
 
         if (collision.CompareTag("Crystal"))
         {
             OctoHp -= 1;
+            DamageAudio.Play();
         }
     }
 }
