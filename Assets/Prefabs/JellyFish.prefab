@@ -124,7 +124,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: 1597743658, guid: 6882734a73993114c88cf53000efff1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -155,6 +155,7 @@ MonoBehaviour:
   bulletsshot: 0
   timer: 0
   shootingcooldown: 1
+  animator: {fileID: 6137961163141876191}
 --- !u!114 &3204727744116466553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JellHp: 8
   DamageAudio: {fileID: 7218370617006076329}
+  animator: {fileID: 6137961163141876191}
 --- !u!61 &8182015702024694004
 BoxCollider2D:
   m_ObjectHideFlags: 0

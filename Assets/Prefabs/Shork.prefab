@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513568460300501241}
   - component: {fileID: 7078297400035786427}
+  - component: {fileID: 6681713877113035046}
   m_Layer: 0
   m_Name: shorkDone-Sheet_0
   m_TagString: Untagged
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6681713877113035046
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909866468740766062}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 16dfcde02e2d49e44b4fc526462c2126, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5266369972162749373
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,8 +222,10 @@ MonoBehaviour:
   pillarGameObject: {fileID: 0}
   shorkhp: 3
   DamageAudio: {fileID: 3898606327255291487}
+  animator: {fileID: 6681713877113035046}
+  bitecooldown: 0
   movementspeed: 8.5
-  ViewRange: 7
+  ViewRange: 10
 --- !u!82 &3898606327255291487
 AudioSource:
   m_ObjectHideFlags: 0

@@ -135,6 +135,7 @@ MonoBehaviour:
   player: {fileID: 0}
   Moving: {x: 0, y: 0}
   ShrimpHp: 4
+  animator: {fileID: 211627410373379735}
 --- !u!95 &211627410373379735
 Animator:
   serializedVersion: 5

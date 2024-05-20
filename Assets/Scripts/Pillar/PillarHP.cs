@@ -12,6 +12,10 @@ public class PillarHP : MonoBehaviour
     public Transform bulletspawnPoint;
     public Transform ShrimpBulletSpawnPoint;
     public LayerMask enemybullets; 
+    public Sprite CrackedHpCrsytals;
+    public Sprite destroyedcrystal;
+    public SpriteRenderer sr; 
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -22,15 +26,23 @@ public class PillarHP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+          if(Pillarhp <= 10)
+          {
+            animator.enabled = false;
+            sr.sprite = CrackedHpCrsytals;
+          }
+
         if(Pillarhp <= 0)
         {
             if (destroyedbypunch)
-            {   
+            {
+                sr.sprite = destroyedcrystal;
                 Spawnbullet();
             }
 
             if (destroyedbyshrimp)
             {
+                sr.sprite = destroyedcrystal;
                 SpawnBulletShrimp();
             }
 

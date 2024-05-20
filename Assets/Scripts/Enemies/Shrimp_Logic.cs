@@ -14,8 +14,8 @@ public class Shrimp_Logic : MonoBehaviour
     public GameObject player;
     public Vector2 Moving;
     public int ShrimpHp = 3;
-    public Animator animator; 
-
+    public Animator animator;
+    bool isDying = false; 
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,9 @@ public class Shrimp_Logic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (isDying) return;
+
         player = GameObject.FindGameObjectWithTag("PlayerGameObject");
         rb = GetComponent<Rigidbody2D>();
 
@@ -47,13 +50,27 @@ public class Shrimp_Logic : MonoBehaviour
 
         if(ShrimpHp <= 0)
         {
-            DamageAudio.Play();
-            Destroy(gameObject);
+
+            StartCoroutine(PlayDeathAndDestroy());
         }
     }
 
+    IEnumerator PlayDeathAndDestroy()
+    {
+        isDying = true;
+        animator.SetBool("Death", true);
+        DamageAudio.Play();
+        rb.velocity = Vector2.zero;
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
+
+    }
+
+
     private void MoveTowardsPlayer()
     {
+        if (isDying) return;
+
         Moving = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
         rb.velocity = Moving.normalized * MovementSpeed;
 
@@ -71,11 +88,12 @@ public class Shrimp_Logic : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (isDying) return;
 
         if (collision.collider.CompareTag("PlayerGameObject"))
         {
             Player_hp.hp -= 1;
-            Destroy(gameObject); 
+            StartCoroutine(PlayDeathAndDestroy());
         }
 
         if (collision.collider.CompareTag("Pillar"))
@@ -88,12 +106,14 @@ public class Shrimp_Logic : MonoBehaviour
                 pillarHP.SetDestroyedByShrimp();
             }
 
-            Destroy(gameObject);
+            StartCoroutine(PlayDeathAndDestroy());
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (isDying) return;
+
         if (collision.CompareTag("Bullet"))
         {
             ShrimpHp -= 1;

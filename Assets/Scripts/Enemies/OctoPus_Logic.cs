@@ -14,7 +14,8 @@ public class OctoPus_Logic : MonoBehaviour
     private Vector2 moving;
     public int OctoHp = 4;
     public AudioSource DamageAudio;
-    public Animator animator; 
+    public Animator animator;
+    bool isDying = false; 
 
     void Start()
     {
@@ -24,6 +25,8 @@ public class OctoPus_Logic : MonoBehaviour
 
     void Update()
     {
+        if (isDying) return;
+
         float distance = Vector2.Distance(player.transform.position, transform.position);
 
         if (distance <= viewrange && allowedToBlast)
@@ -33,9 +36,21 @@ public class OctoPus_Logic : MonoBehaviour
 
         if(OctoHp <= 0)
         {
-            Destroy(gameObject);
+            StartCoroutine(PlayDeathAndDestroy());
         }
     }
+
+    IEnumerator PlayDeathAndDestroy()
+    {
+        isDying = true;
+        animator.SetBool("Death", true);
+        DamageAudio.Play();
+        rb.velocity = Vector2.zero;
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
+
+    }
+
 
     IEnumerator StartBlasting()
     {
@@ -83,7 +98,7 @@ public class OctoPus_Logic : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       
+        if (isDying) return;
 
         if (collision.collider.CompareTag("PlayerGameObject"))
         {
@@ -94,6 +109,8 @@ public class OctoPus_Logic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (isDying) return;
+
         if (collision.CompareTag("Bullet"))
         {
             OctoHp -= 1;
