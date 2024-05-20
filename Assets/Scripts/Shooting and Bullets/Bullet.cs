@@ -17,6 +17,8 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();  
         Vector2 direction = new Vector2(Shooting.Mouseposition.x - transform.position.x, Shooting.Mouseposition.y - transform.position.y).normalized;
         rb.velocity = direction.normalized * BulletSpeed;
+        float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
 
     // Update is called once per frame

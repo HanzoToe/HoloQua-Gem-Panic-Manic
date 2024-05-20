@@ -15,7 +15,8 @@ public class OctoPus_Logic : MonoBehaviour
     public int OctoHp = 4;
     public AudioSource DamageAudio;
     public Animator animator;
-    bool isDying = false; 
+    bool isDying = false;
+    Vector2 PlayerPos; 
 
     void Start()
     {
@@ -38,6 +39,7 @@ public class OctoPus_Logic : MonoBehaviour
         {
             StartCoroutine(PlayDeathAndDestroy());
         }
+
     }
 
     IEnumerator PlayDeathAndDestroy()
@@ -54,6 +56,8 @@ public class OctoPus_Logic : MonoBehaviour
 
     IEnumerator StartBlasting()
     {
+
+
         allowedToBlast = false;
         float sprayTimer = 0f;
 
@@ -64,6 +68,18 @@ public class OctoPus_Logic : MonoBehaviour
         {
             Instantiate(bulletprefab, transform.position, Quaternion.identity);
             sprayTimer += spawnInterval;
+            PlayerPos = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
+
+            Vector2 scale = transform.localScale;
+            if (PlayerPos.x < 0)
+            {
+                scale.x = -1f;
+            }
+            else if (PlayerPos.x > 0)
+            {
+                scale.x = 1f;
+            }
+            transform.localScale = scale;
             yield return new WaitForSeconds(spawnInterval);
         }
 

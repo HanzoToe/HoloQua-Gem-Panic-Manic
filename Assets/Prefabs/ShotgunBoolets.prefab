@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 1105677810482474910}
   - component: {fileID: 1450718022013480097}
   - component: {fileID: 2089513959948805560}
+  - component: {fileID: 4051752346383092530}
   m_Layer: 9
   m_Name: Circle (4)
   m_TagString: EnemyBoolet
@@ -65,7 +66,7 @@ Transform:
   m_GameObject: {fileID: 3269950072602116997}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.22355217, w: 0.974692}
-  m_LocalPosition: {x: 0.437, y: -1.758, z: 0.054540925}
+  m_LocalPosition: {x: -0.289, y: -3.26, z: 0.054540925}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -112,8 +113,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.038882256, a: 1}
+  m_Sprite: {fileID: -1492817808, guid: 441c9eb106a5e214ba12ace6394856a8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -149,7 +150,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!58 &1450718022013480097
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -201,6 +202,27 @@ MonoBehaviour:
   BulletSpeed: 15
   Damage: 1
   PlayerTransform: {fileID: 0}
+--- !u!95 &4051752346383092530
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3269950072602116997}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95bc66b63327f754a9ec001eeab534b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4185486262029371684
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +236,7 @@ GameObject:
   - component: {fileID: 8248623986404799620}
   - component: {fileID: 621078562517095095}
   - component: {fileID: 2656556701331687224}
+  - component: {fileID: 8207848287942798099}
   m_Layer: 9
   m_Name: Circle (2)
   m_TagString: EnemyBoolet
@@ -230,7 +253,7 @@ Transform:
   m_GameObject: {fileID: 4185486262029371684}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.72916484, y: -0.010821104, z: 0.054540925}
+  m_LocalPosition: {x: 0.72916484, y: -0.31, z: 0.054540925}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -277,8 +300,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.038882256, a: 1}
+  m_Sprite: {fileID: -1492817808, guid: 441c9eb106a5e214ba12ace6394856a8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -314,7 +337,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!58 &621078562517095095
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -366,6 +389,27 @@ MonoBehaviour:
   BulletSpeed: 15
   Damage: 1
   PlayerTransform: {fileID: 0}
+--- !u!95 &8207848287942798099
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4185486262029371684}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95bc66b63327f754a9ec001eeab534b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6274636543651457102
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +423,7 @@ GameObject:
   - component: {fileID: 6924351878848814570}
   - component: {fileID: 6647185516057419334}
   - component: {fileID: 2450507533110072909}
+  - component: {fileID: 1468848965794710250}
   m_Layer: 9
   m_Name: Circle (1)
   m_TagString: EnemyBoolet
@@ -395,7 +440,7 @@ Transform:
   m_GameObject: {fileID: 6274636543651457102}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.10600328, w: 0.9943658}
-  m_LocalPosition: {x: 0.582, y: 0.817, z: 0.054540925}
+  m_LocalPosition: {x: 0.519, y: 1.107, z: 0.054540925}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -442,8 +487,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.038882256, a: 1}
+  m_Sprite: {fileID: -1492817808, guid: 441c9eb106a5e214ba12ace6394856a8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -479,7 +524,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!58 &6647185516057419334
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -531,6 +576,27 @@ MonoBehaviour:
   BulletSpeed: 15
   Damage: 1
   PlayerTransform: {fileID: 0}
+--- !u!95 &1468848965794710250
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6274636543651457102}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95bc66b63327f754a9ec001eeab534b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6595288622800704087
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +610,7 @@ GameObject:
   - component: {fileID: 5347958872666178395}
   - component: {fileID: 412375988021624153}
   - component: {fileID: 9045163953136897790}
+  - component: {fileID: 1308331064845019406}
   m_Layer: 9
   m_Name: Circle
   m_TagString: EnemyBoolet
@@ -560,7 +627,7 @@ Transform:
   m_GameObject: {fileID: 6595288622800704087}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.2527579, w: 0.9675296}
-  m_LocalPosition: {x: 0.151, y: 1.565, z: 0.054540925}
+  m_LocalPosition: {x: -0.285, y: 2.344, z: 0.054540925}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -607,8 +674,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.038882256, a: 1}
+  m_Sprite: {fileID: -1492817808, guid: 441c9eb106a5e214ba12ace6394856a8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -644,7 +711,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!58 &412375988021624153
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -696,6 +763,27 @@ MonoBehaviour:
   BulletSpeed: 15
   Damage: 1
   PlayerTransform: {fileID: 0}
+--- !u!95 &1308331064845019406
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6595288622800704087}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95bc66b63327f754a9ec001eeab534b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8684174985005871990
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +797,7 @@ GameObject:
   - component: {fileID: 2834574608341176091}
   - component: {fileID: 5460929171767918891}
   - component: {fileID: 8975201088098203094}
+  - component: {fileID: 9214886348040001210}
   m_Layer: 9
   m_Name: Circle (3)
   m_TagString: Untagged
@@ -725,7 +814,7 @@ Transform:
   m_GameObject: {fileID: 8684174985005871990}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.14943762, w: 0.9887712}
-  m_LocalPosition: {x: 0.676, y: -0.902, z: 0.054540925}
+  m_LocalPosition: {x: 0.404, y: -1.782, z: 0.054540925}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -772,8 +861,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.038882256, a: 1}
+  m_Sprite: {fileID: -1492817808, guid: 441c9eb106a5e214ba12ace6394856a8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -809,7 +898,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!58 &5460929171767918891
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -861,3 +950,24 @@ MonoBehaviour:
   BulletSpeed: 15
   Damage: 1
   PlayerTransform: {fileID: 0}
+--- !u!95 &9214886348040001210
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8684174985005871990}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95bc66b63327f754a9ec001eeab534b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

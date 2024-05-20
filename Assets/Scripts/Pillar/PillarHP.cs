@@ -7,6 +7,7 @@ public class PillarHP : MonoBehaviour
 {
     public int Pillarhp = 40;
     public GameObject ShotgunBullets;
+    public GameObject EnemyShotgunBullets; 
     public bool destroyedbypunch = false;
     public bool destroyedbyshrimp = false; 
     public Transform bulletspawnPoint;
@@ -52,7 +53,7 @@ public class PillarHP : MonoBehaviour
 
     private void SpawnBulletShrimp()
     {
-        Instantiate(ShotgunBullets, ShrimpBulletSpawnPoint.transform.position, ShrimpBulletSpawnPoint.rotation);
+        Instantiate(EnemyShotgunBullets, ShrimpBulletSpawnPoint.transform.position, ShrimpBulletSpawnPoint.rotation);
     }
 
     private void Spawnbullet()

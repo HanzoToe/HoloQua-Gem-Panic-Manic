@@ -85,6 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pillarhp: 30
   ShotgunBullets: {fileID: 5286105395572018482, guid: bdf8fda42de42c747aef81aa654b71f7, type: 3}
+  EnemyShotgunBullets: {fileID: 6766268817165049848, guid: 6b11b227555635f45b541751a73842ec, type: 3}
   destroyedbypunch: 0
   destroyedbyshrimp: 0
   bulletspawnPoint: {fileID: 7740457792883701016}

@@ -22,6 +22,8 @@ public class CrystalShards : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         Vector2 direction = transform.right; 
         rb.velocity = direction.normalized * BulletSpeed;
+        float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
     // Update is called once per frame
     void Update()

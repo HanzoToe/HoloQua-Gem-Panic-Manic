@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5913775123864791907}
   - component: {fileID: -3612902575429754072}
   - component: {fileID: 832461814805511935}
+  - component: {fileID: 8982707386466887983}
   m_Layer: 9
   m_Name: Enemy_Bullet
   m_TagString: EnemyBoolet
@@ -75,9 +76,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.87183553, b: 0.13679248, a: 1}
+  m_SortingOrder: -4
+  m_Sprite: {fileID: -1492817808, guid: 441c9eb106a5e214ba12ace6394856a8, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -146,9 +147,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.1783142}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.67831415
 --- !u!114 &832461814805511935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +163,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletSpeed: 15
+--- !u!95 &8982707386466887983
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2932729369401081647}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 95bc66b63327f754a9ec001eeab534b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
