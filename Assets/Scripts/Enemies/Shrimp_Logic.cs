@@ -51,6 +51,17 @@ public class Shrimp_Logic : MonoBehaviour
     {
         Moving = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
         rb.velocity = Moving.normalized * MovementSpeed;
+
+        Vector2 scale = transform.localScale;
+        if (Moving.x < 0)
+        {
+            scale.x = -1f;
+        }
+        else if (Moving.x > 0)
+        {
+            scale.x = 1f;
+        }
+        transform.localScale = scale;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

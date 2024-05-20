@@ -206,10 +206,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3958913314467827070, guid: a621d4cecffe599439bfa3808faa3d21, type: 3}
-      propertyPath: movementspeed
-      value: 8.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5266369972162749373, guid: a621d4cecffe599439bfa3808faa3d21, type: 3}
       propertyPath: m_Name
       value: Shork
@@ -310,10 +306,6 @@ PrefabInstance:
     - target: {fileID: 5602001307395637164, guid: b3ef522ddcba46749babcc0f5bc05892, type: 3}
       propertyPath: m_Name
       value: Shrimp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7192467508442608411, guid: b3ef522ddcba46749babcc0f5bc05892, type: 3}
-      propertyPath: ShrimpHp
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -689,6 +681,32 @@ MonoBehaviour:
   _barRect: {fileID: 2001445076}
   _mask: {fileID: 1927163343}
   _hpIndicator: {fileID: 563954345}
+--- !u!1 &1196622238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7566105687098901645, guid: 29bc129e95fa25546a3f0a4cc9957420, type: 3}
+  m_PrefabInstance: {fileID: 1546769895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1196622244
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196622238}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d73cd91d153df34884c0ff5712997b5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1345417614
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,11 +819,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4023599118795929822, guid: 29bc129e95fa25546a3f0a4cc9957420, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.190913
+      value: -12.111
       objectReference: {fileID: 0}
     - target: {fileID: 4023599118795929822, guid: 29bc129e95fa25546a3f0a4cc9957420, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.664717
+      value: 5.736
       objectReference: {fileID: 0}
     - target: {fileID: 4023599118795929822, guid: 29bc129e95fa25546a3f0a4cc9957420, type: 3}
       propertyPath: m_LocalPosition.z
@@ -846,7 +864,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7566105687098901645, guid: 29bc129e95fa25546a3f0a4cc9957420, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1196622244}
   m_SourcePrefab: {fileID: 100100000, guid: 29bc129e95fa25546a3f0a4cc9957420, type: 3}
 --- !u!1001 &1651129972
 PrefabInstance:
@@ -1164,10 +1185,6 @@ PrefabInstance:
     - target: {fileID: 564472621601555956, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 865717893373335948, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
-      propertyPath: SlideTime
-      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6990808567434840857, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
       propertyPath: m_Name
