@@ -206,6 +206,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3958913314467827070, guid: a621d4cecffe599439bfa3808faa3d21, type: 3}
+      propertyPath: movementspeed
+      value: 8.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5266369972162749373, guid: a621d4cecffe599439bfa3808faa3d21, type: 3}
       propertyPath: m_Name
       value: Shork
@@ -520,7 +524,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.400024, y: -40.100006}
+  m_AnchoredPosition: {x: 8.400024, y: -41.7}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &563954345
@@ -570,8 +574,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1160,6 +1164,10 @@ PrefabInstance:
     - target: {fileID: 564472621601555956, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 865717893373335948, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
+      propertyPath: SlideTime
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6990808567434840857, guid: 1c2b7107620d2c34c9f42798f0f64e49, type: 3}
       propertyPath: m_Name

@@ -166,4 +166,4 @@ MonoBehaviour:
   rb: {fileID: 0}
   player: {fileID: 0}
   Moving: {x: 0, y: 0}
-  ShrimpHp: 2
+  ShrimpHp: 4

@@ -217,7 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 7.7
   SlideDistance: 3.5
-  SlideTime: 0.2
+  SlideTime: 0.1
   SlideCooldown: 0
   rb: {fileID: 0}
   animator: {fileID: 2817681659368625975}

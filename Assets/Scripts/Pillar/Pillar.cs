@@ -2,9 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pillar : MonoBehaviour
 {
+
+
+
     Vector2 MousePos;
     Collider2D hitcollider;
     Collider2D playerCollider;
@@ -23,6 +27,7 @@ public class Pillar : MonoBehaviour
 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +36,7 @@ public class Pillar : MonoBehaviour
         lineRenderer.loop = true;
         lineRenderer.useWorldSpace = false;
         DrawCircle();
+        
     }
 
     private void DrawCircle()
@@ -49,7 +55,6 @@ public class Pillar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         CooldownTimer -= Time.deltaTime;
 
 
